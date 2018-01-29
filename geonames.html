@@ -37,8 +37,8 @@
             center:[42, 2]
           });
   
-          L.tileLayer('http://{s}.tile.stamen.com/toner-lite/{z}/{x}/{y}.png', {
-            attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> — Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+          L.tileLayer('https://{s}.tile.stamen.com/toner-lite/{z}/{x}/{y}.png', {
+            attribution: 'Map tiles by <a href="https://stamen.com">Stamen Design</a>, <a href="https://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> — Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
             subdomains: 'abcd',
             maxZoom: 17,
             minZoom: 2
@@ -46,7 +46,7 @@
   
   
           function peticionTerremotos() {
-            var peticion = 'http://api.geonames.org/earthquakesJSON?' +
+            var peticion = 'https://api.geonames.org/earthquakesJSON?' +
               'north=' + map.getBounds()._northEast.lat + '&' +
               'south=' + map.getBounds()._southWest.lat + '&' +
               'east=' + map.getBounds()._northEast.lng + '&' +
