@@ -13,9 +13,14 @@
       </script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
   
+      
+  
       <script src="js/l.control.geosearch.js"></script>
       <script src="js/l.geosearch.provider.openstreetmap.js"></script>
+      <script src="js/l.geosearch.provider.esri.js"></script>
+      <script src="js/l.geosearch.provider.google.js"></script>
       <link rel="stylesheet" href="css/l.geosearch.css" />
+    
   
       <style>
         body {
@@ -46,13 +51,13 @@
   
           esri = L.tileLayer(
             'http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-              maxZoom: 21,
+              maxZoom: 17,
               minZoom: 1,
               attribution: 'Tiles © Esri',
             }).addTo(map);
   
           osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 21,
+            maxZoom: 19,
             minZoom: 1,
             attribution: 'OSM'
           });
@@ -66,9 +71,12 @@
           controlCapas = L.control.layers(baseMaps, null);
           controlCapas.addTo(map);
   
+          
                   new L.Control.GeoSearch({
-                      provider: new L.GeoSearch.Provider.OpenStreetMap()
+                //      provider: new L.GeoSearch.Provider.OpenStreetMap()
+                provider: new L.GeoSearch.Provider.Esri()
                   }).addTo(map);
+          
   
         });
         </script>
